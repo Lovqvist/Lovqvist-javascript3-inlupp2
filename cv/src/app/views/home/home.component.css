@@ -1,0 +1,15 @@
+img {
+    width: 20rem;
+}
+
+@media(min-width: 768px) {
+    img {
+        width: 40rem;
+    }
+}
+@media(min-width: 1200px) { 
+
+    .contact-form {
+        width: 75%;
+    }
+}

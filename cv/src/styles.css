@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+.banner {
+    background-color: #a1769e42 ;
+}
+img {
+    width: 15rem;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}

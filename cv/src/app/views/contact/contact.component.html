@@ -1,0 +1,70 @@
+
+<div class="row m-0">
+    <div class="col-md-9 col-xl-10 p-0 ">
+        <div class="border contact-form" >
+            <h2 class="text-center mt-4">Kontakta mig!</h2>
+
+            <div class="container ">
+                <form class="m-4" #form="ngForm" (ngSubmit)="onSub(form)">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="name" placeholder="Name" name="name" [(ngModel)]="user.name" #name= "ngModel" required>
+                        <label for="name">Namn</label>
+                        <div class="text-danger" *ngIf="name.invalid && (name.touched || name.dirty)"> 
+                        Vänligen fyll i ditt namn
+                        </div>
+                    </div> 
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="email" placeholder="Email" name="email" [(ngModel)]="user.email" #email= "ngModel" required pattern="([\w-]+(?:\.[\a-z]+)*)@[a-zA-Z_]+?\.[a-zA-Z]{2,3}">
+                        <label for="email">Email adress</label>
+                        <div class="text-danger" *ngIf="email.invalid && (email.touched || email.dirty)"> 
+                            Vänligen fyll i giltig email adress
+                        </div>
+                    </div>   
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="title" placeholder="Ämne" name="title" [(ngModel)]="user.title" #title= "ngModel" required>
+                        <label for="title">Ämne</label>
+                        <div class="text-danger" *ngIf="title.invalid && (title.touched || title.dirty)"> 
+                            Vänligen ange ämne på ditt meddelande
+                        </div>
+                    </div>  
+                    
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="message" style="height: 200px" name="message" [(ngModel)]="user.message" #message= "ngModel" required></textarea>
+                        <label for="message">Meddelande</label>
+                        <div class="text-danger" *ngIf="message.invalid && (message.touched || message.dirty)"> 
+                            Vänligen fyll i ett meddelande
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <button class="btn btn-light" [disabled]="form.invalid" >Skicka</button>
+                        
+                    </div>        
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-xl-2 banner py-3 order-first order-md-last ">
+        <img
+        src="../../../assets/IMG_0600.jpg"
+        class="img-fluid rounded-circle my-4 px-5 "
+        alt=""
+        />
+        <h4 class="text-center">Sandra Lövqvist</h4>
+        <h1 class="h5 text-center font-weight-light mb-4">Frontend utvecklare</h1>
+        <div class="row text-center">
+            <div class="col col-md-12">
+                <p class="fw-lighter mb-0 mt-2">Adress</p>
+                <p class="fst-italic">Fibyvägen, 75576 Vänge</p>
+            </div>
+            <div class="col col-md-12">
+                <p class="fw-lighter mb-0 mt-2">Telefonnummer</p>
+                <p class="fst-italic">0762- 476272</p>
+            </div>
+            <div class="col col-md-12">
+                <p class="fw-lighter mb-0 mt-2">LinkedIn</p>
+                <a class="fst-italic" href="https://www.linkedin.com/in/sandralövqvist/">Gå till profil</a>
+            </div>
+        </div>
+    </div>
+</div>
